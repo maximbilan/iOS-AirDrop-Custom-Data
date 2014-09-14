@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		94595E1419C59CAA0097CF2C /* AirDropCustomData.m in Sources */ = {isa = PBXBuildFile; fileRef = 94595E1319C59CAA0097CF2C /* AirDropCustomData.m */; };
-		94595E1619C59DFB0097CF2C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 94595E1519C59DFB0097CF2C /* logo.png */; };
 		94595E2419C5A0E30097CF2C /* readme 1.customdata in Resources */ = {isa = PBXBuildFile; fileRef = 94595E2219C5A0E30097CF2C /* readme 1.customdata */; };
 		94595E2519C5A0E30097CF2C /* readme 2.customdata in Resources */ = {isa = PBXBuildFile; fileRef = 94595E2319C5A0E30097CF2C /* readme 2.customdata */; };
 		94BE656E19C58B730024BF86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BE656D19C58B730024BF86 /* main.m */; };
@@ -22,7 +21,6 @@
 /* Begin PBXFileReference section */
 		94595E1219C59CAA0097CF2C /* AirDropCustomData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirDropCustomData.h; sourceTree = "<group>"; };
 		94595E1319C59CAA0097CF2C /* AirDropCustomData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirDropCustomData.m; sourceTree = "<group>"; };
-		94595E1519C59DFB0097CF2C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		94595E2219C5A0E30097CF2C /* readme 1.customdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "readme 1.customdata"; sourceTree = "<group>"; };
 		94595E2319C5A0E30097CF2C /* readme 2.customdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "readme 2.customdata"; sourceTree = "<group>"; };
 		94BE656819C58B730024BF86 /* airdrop_custom_data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = airdrop_custom_data.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				94595E2119C5A0E30097CF2C /* Custom Data */,
-				94595E1519C59DFB0097CF2C /* logo.png */,
 				94595E1219C59CAA0097CF2C /* AirDropCustomData.h */,
 				94595E1319C59CAA0097CF2C /* AirDropCustomData.m */,
 				94BE656F19C58B730024BF86 /* AppDelegate.h */,
@@ -160,7 +157,6 @@
 			files = (
 				94595E2519C5A0E30097CF2C /* readme 2.customdata in Resources */,
 				94595E2419C5A0E30097CF2C /* readme 1.customdata in Resources */,
-				94595E1619C59DFB0097CF2C /* logo.png in Resources */,
 				94BE657719C58B730024BF86 /* Main.storyboard in Resources */,
 				94BE657C19C58B730024BF86 /* LaunchScreen.xib in Resources */,
 				94BE657919C58B730024BF86 /* Images.xcassets in Resources */,

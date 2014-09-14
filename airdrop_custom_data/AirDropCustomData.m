@@ -39,7 +39,7 @@
       thumbnailImageForActivityType:(NSString *)activityType suggestedSize:(CGSize)size
 {
     if ([activityType isEqualToString:UIActivityTypeAirDrop]) {
-        return [UIImage imageNamed:@"logo"];
+        return [UIImage imageNamed:@"AppIcon"];
     }
     return nil;
 }
