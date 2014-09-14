@@ -49,10 +49,10 @@ The source you can found here https://developer.apple.com/library/ios/qa/qa1587/
 For our custom data format create UIActivityItemSource class:
 
 <pre>
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import &#60;Foundation/Foundation.h&#62;
+#import &#60;UIKit/UIKit.h&#62;
 
-@interface AirDropCustomData : NSObject <UIActivityItemSource>
+@interface AirDropCustomData : NSObject &#60;UIActivityItemSource&#62;
 
 @property (nonatomic, strong) NSURL *url;
 @property (nonatomic, strong) NSString *subject;
