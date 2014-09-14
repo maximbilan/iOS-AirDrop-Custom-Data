@@ -1,10 +1,10 @@
 iOS Airdrop Custom Data Sample
 =======================
 
-In iOS 7, Apple introduced AirDrop, a way of sharing files and links between nearby devices using a combination of Bluetooth and Wi-Fi.
-If you’re sharing images, or simple web links, you’ll get the simple behavior with UIActivityViewController, but if you want to share custom data into your native application you have to do a little more work. I'd like to tell exactly how to do this.
+In iOS 7, Apple introduced AirDrop, a way of sharing files and links between nearby devices using a combination of Bluetooth and Wi-Fi.<br>
+If you’re sharing images, or simple web links, you’ll get the simple behavior with UIActivityViewController, but if you want to share custom data into your native application you have to do a little more work. I'd like to tell exactly how to do this.<br><br>
 
-You need to register the document types that your application can open with iOS. To do this you need to add a document type to your app’s Info.plist for each document type that your app can open. Additionally if any of the document types are not known by iOS, you will need to provide an Uniform Type Identifier (UTI) for that document type.
+You need to register the document types that your application can open with iOS. To do this you need to add a document type to your app’s Info.plist for each document type that your app can open. Additionally if any of the document types are not known by iOS, you will need to provide an Uniform Type Identifier (UTI) for that document type.<br><br>
 
 <b>To add the document type do the following:</b>
 
