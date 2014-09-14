@@ -174,4 +174,4 @@ And for obtaining and processing your custom data, you should use openURL method
 }
 </pre>
 
-That's all. I think it is not very difficult. And you should not have difficulties to understand this. Thanks for attention.
+That's all. Completed sample you can found in this repository. I think it is not very difficult. And you should not have difficulties to understand this. Thanks for attention.
