@@ -42,4 +42,57 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if ([url isFileURL] && [[[url absoluteString] pathExtension] isEqualToString:@"customdata"]) {
+        [self copyItemAtURLtoDocumentsDirectory:url];
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (BOOL)copyItemAtURLtoDocumentsDirectory:(NSURL *)url
+{
+    NSError *error;
+    NSURL *copyToURL = [self applicationDocumentsDirectory];
+    NSString *fileName = [url lastPathComponent];
+    
+    copyToURL = [copyToURL URLByAppendingPathComponent:fileName isDirectory:NO];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:copyToURL.path]) {
+        
+        NSURL *duplicateURL = copyToURL;
+        copyToURL = [copyToURL URLByDeletingPathExtension];
+        NSString *fileNameWithoutExtension = [copyToURL lastPathComponent];
+        NSString *fileExtension = [url pathExtension];
+        
+        int i = 1;
+        while ([[NSFileManager defaultManager] fileExistsAtPath:duplicateURL.path]) {
+            copyToURL = [copyToURL URLByDeletingLastPathComponent];
+            copyToURL = [copyToURL URLByAppendingPathComponent:[NSString stringWithFormat:@"%@–%i", fileNameWithoutExtension, i]];
+            copyToURL = [copyToURL URLByAppendingPathExtension:fileExtension];
+            duplicateURL = copyToURL;
+            i++;
+        }
+    }
+    
+    BOOL ok = [[NSFileManager defaultManager] moveItemAtURL:url toURL:copyToURL error:&error];
+    if (!ok) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    
+    return ok;
+}
+
+- (NSURL *)applicationDocumentsDirectory
+{
+    NSString *documentsDirectory;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    if ([paths count] > 0) {
+        documentsDirectory = [paths objectAtIndex:0];
+    }
+    return [NSURL fileURLWithPath:documentsDirectory];
+}
+
 @end
