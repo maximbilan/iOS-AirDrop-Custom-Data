@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94595E1419C59CAA0097CF2C /* AirDropCustomData.m in Sources */ = {isa = PBXBuildFile; fileRef = 94595E1319C59CAA0097CF2C /* AirDropCustomData.m */; };
+		94595E1619C59DFB0097CF2C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 94595E1519C59DFB0097CF2C /* logo.png */; };
+		94595E2419C5A0E30097CF2C /* readme 1.customdata in Resources */ = {isa = PBXBuildFile; fileRef = 94595E2219C5A0E30097CF2C /* readme 1.customdata */; };
+		94595E2519C5A0E30097CF2C /* readme 2.customdata in Resources */ = {isa = PBXBuildFile; fileRef = 94595E2319C5A0E30097CF2C /* readme 2.customdata */; };
 		94BE656E19C58B730024BF86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BE656D19C58B730024BF86 /* main.m */; };
 		94BE657119C58B730024BF86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BE657019C58B730024BF86 /* AppDelegate.m */; };
 		94BE657419C58B730024BF86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BE657319C58B730024BF86 /* ViewController.m */; };
@@ -16,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		94595E1219C59CAA0097CF2C /* AirDropCustomData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirDropCustomData.h; sourceTree = "<group>"; };
+		94595E1319C59CAA0097CF2C /* AirDropCustomData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirDropCustomData.m; sourceTree = "<group>"; };
+		94595E1519C59DFB0097CF2C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		94595E2219C5A0E30097CF2C /* readme 1.customdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "readme 1.customdata"; sourceTree = "<group>"; };
+		94595E2319C5A0E30097CF2C /* readme 2.customdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "readme 2.customdata"; sourceTree = "<group>"; };
 		94BE656819C58B730024BF86 /* airdrop_custom_data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = airdrop_custom_data.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BE656C19C58B730024BF86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94BE656D19C58B730024BF86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -39,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94595E2119C5A0E30097CF2C /* Custom Data */ = {
+			isa = PBXGroup;
+			children = (
+				94595E2219C5A0E30097CF2C /* readme 1.customdata */,
+				94595E2319C5A0E30097CF2C /* readme 2.customdata */,
+			);
+			path = "Custom Data";
+			sourceTree = "<group>";
+		};
 		94BE655F19C58B730024BF86 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +76,10 @@
 		94BE656A19C58B730024BF86 /* airdrop_custom_data */ = {
 			isa = PBXGroup;
 			children = (
+				94595E2119C5A0E30097CF2C /* Custom Data */,
+				94595E1519C59DFB0097CF2C /* logo.png */,
+				94595E1219C59CAA0097CF2C /* AirDropCustomData.h */,
+				94595E1319C59CAA0097CF2C /* AirDropCustomData.m */,
 				94BE656F19C58B730024BF86 /* AppDelegate.h */,
 				94BE657019C58B730024BF86 /* AppDelegate.m */,
 				94BE657219C58B730024BF86 /* ViewController.h */,
@@ -136,6 +158,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94595E2519C5A0E30097CF2C /* readme 2.customdata in Resources */,
+				94595E2419C5A0E30097CF2C /* readme 1.customdata in Resources */,
+				94595E1619C59DFB0097CF2C /* logo.png in Resources */,
 				94BE657719C58B730024BF86 /* Main.storyboard in Resources */,
 				94BE657C19C58B730024BF86 /* LaunchScreen.xib in Resources */,
 				94BE657919C58B730024BF86 /* Images.xcassets in Resources */,
@@ -149,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94595E1419C59CAA0097CF2C /* AirDropCustomData.m in Sources */,
 				94BE657419C58B730024BF86 /* ViewController.m in Sources */,
 				94BE657119C58B730024BF86 /* AppDelegate.m in Sources */,
 				94BE656E19C58B730024BF86 /* main.m in Sources */,

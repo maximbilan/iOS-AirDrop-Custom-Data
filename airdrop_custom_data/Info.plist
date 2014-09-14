@@ -17,7 +17,7 @@
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>maximbilan.airdrop_custom_data</string>
+				<string>maximbilan.airdrop-custom-data</string>
 			</array>
 		</dict>
 	</array>
@@ -70,12 +70,12 @@
 			<key>UTTypeDescription</key>
 			<string>Custom file</string>
 			<key>UTTypeIdentifier</key>
-			<string>maximbilan.airdrop_custom_data</string>
+			<string>maximbilan.airdrop-custom-data</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>airdrop_custom_data</string>
+					<string>customdata</string>
 				</array>
 			</dict>
 		</dict>
