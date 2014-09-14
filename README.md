@@ -45,5 +45,133 @@ If the document type you are adding is a custom document type, or a document typ
 14. Toggle open the item you just added and click the + button in the table row.
 15. For item 0 change the “value” to the file extension of your document. For example, txt, pdf, docx, etc.
 
-For example:
+For example:<br>
 ![alt tag](https://raw.github.com/maximbilan/ios_airdrop_custom_data/master/img/img1.png)
+
+The source you can found here https://developer.apple.com/library/ios/qa/qa1587/_index.html.
+
+For our custom data format create UIActivityItemSource class:
+
+<pre>
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+@interface AirDropCustomData : NSObject <UIActivityItemSource>
+
+@property (nonatomic, strong) NSURL *url;
+@property (nonatomic, strong) NSString *subject;
+
+- (id)initWithURL:(NSURL *)url subject:(NSString *)subject;
+
+@end
+</pre>
+
+And implementation:
+
+<pre>
+#import "AirDropCustomData.h"
+
+@implementation AirDropCustomData
+
+- (id)initWithURL:(NSURL *)url subject:(NSString *)subject;
+{
+    self = [super init];
+    if (self != nil) {
+        self.url = url;
+        self.subject = subject;
+    }
+    return self;
+}
+
+- (id)activityViewControllerPlaceholderItem:(UIActivityViewController *)activityViewController
+{
+    return self.url;
+}
+
+- (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType
+{
+    return self.url;
+}
+
+- (NSString *)activityViewController:(UIActivityViewController *)activityViewController subjectForActivityType:(NSString *)activityType
+{
+    return self.subject;
+}
+
+- (UIImage *)activityViewController:(UIActivityViewController *)activityViewController
+      thumbnailImageForActivityType:(NSString *)activityType suggestedSize:(CGSize)size
+{
+    if ([activityType isEqualToString:UIActivityTypeAirDrop]) {
+        return [UIImage imageNamed:@"AppIcon"];
+    }
+    return nil;
+}
+
+@end
+</pre>
+
+For calling the airdrop sharing you can use this code:
+
+<pre>
+   NSString *path1 = [[NSBundle mainBundle] pathForResource:@"readme 1" ofType:@"customdata"];
+    NSURL *url1 = [NSURL fileURLWithPath:path1];
+    AirDropCustomData *item1 = [[AirDropCustomData alloc] initWithURL:url1 subject:@"readme 1"];
+    
+    NSString *path2 = [[NSBundle mainBundle] pathForResource:@"readme 2" ofType:@"customdata"];
+    NSURL *url2 = [NSURL fileURLWithPath:path2];
+    AirDropCustomData *item2 = [[AirDropCustomData alloc] initWithURL:url2 subject:@"readme 2"];
+    
+    NSArray *items = [NSArray arrayWithObjects:item1, item2, nil];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
+    
+    // Exclude all activities except AirDrop.
+    NSArray *excludedActivities = @[UIActivityTypePostToTwitter,
+                                    UIActivityTypePostToFacebook,
+                                    UIActivityTypePostToWeibo,
+                                    UIActivityTypeMessage,
+                                    UIActivityTypeMail,
+                                    UIActivityTypePrint,
+                                    UIActivityTypeCopyToPasteboard,
+                                    UIActivityTypeAssignToContact,
+                                    UIActivityTypeSaveToCameraRoll,
+                                    UIActivityTypeAddToReadingList,
+                                    UIActivityTypePostToFlickr,
+                                    UIActivityTypePostToVimeo,
+                                    UIActivityTypePostToTencentWeibo];
+    activityViewController.excludedActivityTypes = excludedActivities;
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        [self presentViewController:activityViewController animated:YES completion:nil];
+    }
+    else {
+        if (![self.activityPopover isPopoverVisible]) {
+            self.activityPopover = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
+            [self.activityPopover presentPopoverFromRect:[self.shareButton frame]
+                                                  inView:self.view
+                                permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        }
+        else {
+            [self.activityPopover dismissPopoverAnimated:YES];
+        }
+    }
+</pre>
+
+readme 1.customdata and readme 2.customdata - pre created files, which are located in bundle.
+Files should not be necessary in the bundle, it's just for sample, they may be created anywhere, depends on your implementation.
+
+And for obtaining and processing your custom data, you should use openURL method in application delegate. For example:
+
+<pre>
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if ([url isFileURL] && [[[url absoluteString] pathExtension] isEqualToString:@"customdata"]) {
+        // processing
+
+        return YES;
+    }
+    
+    return NO;
+}
+</pre>
+
+That's all. Completed sample you can found in this repository. I think it is not very difficult. And you should not have difficulties to understand this. Thanks for attention.
