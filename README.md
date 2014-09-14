@@ -45,5 +45,5 @@ If the document type you are adding is a custom document type, or a document typ
 14. Toggle open the item you just added and click the + button in the table row.
 15. For item 0 change the “value” to the file extension of your document. For example, txt, pdf, docx, etc.
 
-For example:
+For example:<br>
 ![alt tag](https://raw.github.com/maximbilan/ios_airdrop_custom_data/master/img/img1.png)
