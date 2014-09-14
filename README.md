@@ -84,18 +84,21 @@ And implementation:
     return self.url;
 }
 
-- (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType
+- (id)activityViewController:(UIActivityViewController *)activityViewController
+         itemForActivityType:(NSString *)activityType
 {
     return self.url;
 }
 
-- (NSString *)activityViewController:(UIActivityViewController *)activityViewController subjectForActivityType:(NSString *)activityType
+- (NSString *)activityViewController:(UIActivityViewController *)activityViewController
+              subjectForActivityType:(NSString *)activityType
 {
     return self.subject;
 }
 
 - (UIImage *)activityViewController:(UIActivityViewController *)activityViewController
-      thumbnailImageForActivityType:(NSString *)activityType suggestedSize:(CGSize)size
+      thumbnailImageForActivityType:(NSString *)activityType
+                      suggestedSize:(CGSize)size
 {
     if ([activityType isEqualToString:UIActivityTypeAirDrop]) {
         return [UIImage imageNamed:@"AppIcon"];
@@ -109,56 +112,59 @@ And implementation:
 For calling the airdrop sharing you can use this code:
 
 <pre>
-   NSString *path1 = [[NSBundle mainBundle] pathForResource:@"readme 1" ofType:@"customdata"];
-    NSURL *url1 = [NSURL fileURLWithPath:path1];
-    AirDropCustomData *item1 = [[AirDropCustomData alloc] initWithURL:url1 subject:@"readme 1"];
+NSString *path1 = [[NSBundle mainBundle] pathForResource:@"readme 1" ofType:@"customdata"];
+NSURL *url1 = [NSURL fileURLWithPath:path1];
+AirDropCustomData *item1 = [[AirDropCustomData alloc] initWithURL:url1 subject:@"readme 1"];
     
-    NSString *path2 = [[NSBundle mainBundle] pathForResource:@"readme 2" ofType:@"customdata"];
-    NSURL *url2 = [NSURL fileURLWithPath:path2];
-    AirDropCustomData *item2 = [[AirDropCustomData alloc] initWithURL:url2 subject:@"readme 2"];
+NSString *path2 = [[NSBundle mainBundle] pathForResource:@"readme 2" ofType:@"customdata"];
+NSURL *url2 = [NSURL fileURLWithPath:path2];
+AirDropCustomData *item2 = [[AirDropCustomData alloc] initWithURL:url2 subject:@"readme 2"];
     
-    NSArray *items = [NSArray arrayWithObjects:item1, item2, nil];
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
+NSArray *items = [NSArray arrayWithObjects:item1, item2, nil];
+UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
     
-    // Exclude all activities except AirDrop.
-    NSArray *excludedActivities = @[UIActivityTypePostToTwitter,
-                                    UIActivityTypePostToFacebook,
-                                    UIActivityTypePostToWeibo,
-                                    UIActivityTypeMessage,
-                                    UIActivityTypeMail,
-                                    UIActivityTypePrint,
-                                    UIActivityTypeCopyToPasteboard,
-                                    UIActivityTypeAssignToContact,
-                                    UIActivityTypeSaveToCameraRoll,
-                                    UIActivityTypeAddToReadingList,
-                                    UIActivityTypePostToFlickr,
-                                    UIActivityTypePostToVimeo,
-                                    UIActivityTypePostToTencentWeibo];
-    activityViewController.excludedActivityTypes = excludedActivities;
+// Exclude all activities except AirDrop.
+NSArray *excludedActivities = @[UIActivityTypePostToTwitter,
+                                UIActivityTypePostToFacebook,
+                                UIActivityTypePostToWeibo,
+                                UIActivityTypeMessage,
+                                UIActivityTypeMail,
+                                UIActivityTypePrint,
+                                UIActivityTypeCopyToPasteboard,
+                                UIActivityTypeAssignToContact,
+                                UIActivityTypeSaveToCameraRoll,
+                                UIActivityTypeAddToReadingList,
+                                UIActivityTypePostToFlickr,
+                                UIActivityTypePostToVimeo,
+                                UIActivityTypePostToTencentWeibo];
+activityViewController.excludedActivityTypes = excludedActivities;
     
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        [self presentViewController:activityViewController animated:YES completion:nil];
+if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    [self presentViewController:activityViewController animated:YES completion:nil];
+}
+else {
+    if (![self.activityPopover isPopoverVisible]) {
+        self.activityPopover = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
+        [self.activityPopover presentPopoverFromRect:[self.shareButton frame]
+                                              inView:self.view
+                            permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
     else {
-        if (![self.activityPopover isPopoverVisible]) {
-            self.activityPopover = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
-            [self.activityPopover presentPopoverFromRect:[self.shareButton frame]
-                                                  inView:self.view
-                                permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-        }
-        else {
-            [self.activityPopover dismissPopoverAnimated:YES];
-        }
+        [self.activityPopover dismissPopoverAnimated:YES];
     }
+}
 </pre>
 
-readme 1.customdata and readme 2.customdata - pre created files, which are located in bundle.
+Readme 1.customdata and readme 2.customdata - pre created files, which are located in bundle.
 Files should not be necessary in the bundle, it's just for sample, they may be created anywhere, depends on your implementation.
 
 And for obtaining and processing your custom data, you should use openURL method in application delegate. For example:
 
 <pre>
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
 {
     if ([url isFileURL] && [[[url absoluteString] pathExtension] isEqualToString:@"customdata"]) {
         // processing
