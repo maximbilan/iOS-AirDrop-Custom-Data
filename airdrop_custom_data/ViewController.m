@@ -45,7 +45,7 @@
                                     UIActivityTypePostToFacebook,
                                     UIActivityTypePostToWeibo,
                                     UIActivityTypeMessage,
-                                    //UIActivityTypeMail,
+                                    UIActivityTypeMail,
                                     UIActivityTypePrint,
                                     UIActivityTypeCopyToPasteboard,
                                     UIActivityTypeAssignToContact,
