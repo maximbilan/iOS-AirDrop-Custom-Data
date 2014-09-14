@@ -15,16 +15,6 @@
 		94BE657C19C58B730024BF86 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94BE657A19C58B730024BF86 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		94BE658219C58B740024BF86 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 94BE656019C58B730024BF86 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 94BE656719C58B730024BF86;
-			remoteInfo = airdrop_custom_data;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		94BE656819C58B730024BF86 /* airdrop_custom_data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = airdrop_custom_data.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BE656C19C58B730024BF86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,18 +26,10 @@
 		94BE657619C58B730024BF86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94BE657819C58B730024BF86 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		94BE657B19C58B730024BF86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		94BE658119C58B740024BF86 /* airdrop_custom_dataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = airdrop_custom_dataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		94BE656519C58B730024BF86 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		94BE657E19C58B740024BF86 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -69,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				94BE656819C58B730024BF86 /* airdrop_custom_data.app */,
-				94BE658119C58B740024BF86 /* airdrop_custom_dataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,24 +99,6 @@
 			productReference = 94BE656819C58B730024BF86 /* airdrop_custom_data.app */;
 			productType = "com.apple.product-type.application";
 		};
-		94BE658019C58B740024BF86 /* airdrop_custom_dataTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 94BE658E19C58B740024BF86 /* Build configuration list for PBXNativeTarget "airdrop_custom_dataTests" */;
-			buildPhases = (
-				94BE657D19C58B740024BF86 /* Sources */,
-				94BE657E19C58B740024BF86 /* Frameworks */,
-				94BE657F19C58B740024BF86 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				94BE658319C58B740024BF86 /* PBXTargetDependency */,
-			);
-			name = airdrop_custom_dataTests;
-			productName = airdrop_custom_dataTests;
-			productReference = 94BE658119C58B740024BF86 /* airdrop_custom_dataTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -147,10 +110,6 @@
 				TargetAttributes = {
 					94BE656719C58B730024BF86 = {
 						CreatedOnToolsVersion = 6.0;
-					};
-					94BE658019C58B740024BF86 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 94BE656719C58B730024BF86;
 					};
 				};
 			};
@@ -168,7 +127,6 @@
 			projectRoot = "";
 			targets = (
 				94BE656719C58B730024BF86 /* airdrop_custom_data */,
-				94BE658019C58B740024BF86 /* airdrop_custom_dataTests */,
 			);
 		};
 /* End PBXProject section */
@@ -181,13 +139,6 @@
 				94BE657719C58B730024BF86 /* Main.storyboard in Resources */,
 				94BE657C19C58B730024BF86 /* LaunchScreen.xib in Resources */,
 				94BE657919C58B730024BF86 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		94BE657F19C58B740024BF86 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,22 +155,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94BE657D19C58B740024BF86 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		94BE658319C58B740024BF86 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 94BE656719C58B730024BF86 /* airdrop_custom_data */;
-			targetProxy = 94BE658219C58B740024BF86 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		94BE657519C58B730024BF86 /* Main.storyboard */ = {
@@ -341,40 +277,6 @@
 			};
 			name = Release;
 		};
-		94BE658F19C58B740024BF86 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = airdrop_custom_dataTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/airdrop_custom_data.app/airdrop_custom_data";
-			};
-			name = Debug;
-		};
-		94BE659019C58B740024BF86 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = airdrop_custom_dataTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/airdrop_custom_data.app/airdrop_custom_data";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -392,15 +294,6 @@
 			buildConfigurations = (
 				94BE658C19C58B740024BF86 /* Debug */,
 				94BE658D19C58B740024BF86 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		94BE658E19C58B740024BF86 /* Build configuration list for PBXNativeTarget "airdrop_custom_dataTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				94BE658F19C58B740024BF86 /* Debug */,
-				94BE659019C58B740024BF86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
