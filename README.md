@@ -23,22 +23,23 @@ You need to register the document types that your application can open with iOS.
 
 If the document type you are adding is a custom document type, or a document type that iOS does not already know about, you will need to define the UTI for the document type.
 
-<b>To add a new UTI do the following:</b><br>
-1. In your Xcode project select the target you want to add the new UTI to.<br>
-2. Select the Info tab.<br>
-3. Click on the disclosure button for Exported UTIs.<br>
-4. Click the “+” button.<br>
-5. Select “Add Exported UTI”.<br>
-6. In the Description field, fill in a description of the UTI. In the Identifier field, fill in the identifier for the UTI. In the Conforms To field fill in the list of UTIs that this new UTI conforms to.<br>
-7. Toggle the “Additional imported UTI properties” disclosure triangle to open up a table where you can add some additional information.<br>
+<b>To add a new UTI do the following:</b>
+
+1. In your Xcode project select the target you want to add the new UTI to.
+2. Select the Info tab.
+3. Click on the disclosure button for Exported UTIs.
+4. Click the “+” button.
+5. Select “Add Exported UTI”.
+6. In the Description field, fill in a description of the UTI. In the Identifier field, fill in the identifier for the UTI. In the Conforms To field fill in the list of UTIs that this new UTI conforms to.
+7. Toggle the “Additional imported UTI properties” disclosure triangle to open up a table where you can add some additional information.
 8. Click in the empty table and a list of items that can be added to the table will be displayed.
-9. Type in “UTTypeTagSpecification”.<br>
-10. Set the type to Dictionary.<br>
-11. Click the disclosure triangle to open it, and click the + button in the table row to add an entry.<br>
-12. For the “New item” change the name to “public.filename-extension”.<br>
-13. For the type of the item change it to “Array”.<br>
-14. Toggle open the item you just added and click the + button in the table row.<br>
-15. For item 0 change the “value” to the file extension of your document. For example, txt, pdf, docx, etc.<br>
+9. Type in “UTTypeTagSpecification”.
+10. Set the type to Dictionary.
+11. Click the disclosure triangle to open it, and click the + button in the table row to add an entry.
+12. For the “New item” change the name to “public.filename-extension”.
+13. For the type of the item change it to “Array”.
+14. Toggle open the item you just added and click the + button in the table row.
+15. For item 0 change the “value” to the file extension of your document. For example, txt, pdf, docx, etc.
 
 For example:<br>
 ![alt tag](https://raw.github.com/maximbilan/ios_airdrop_custom_data/master/img/img1.png)
