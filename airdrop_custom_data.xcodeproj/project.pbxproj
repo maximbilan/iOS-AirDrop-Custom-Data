@@ -23,7 +23,7 @@
 		94595E1319C59CAA0097CF2C /* AirDropCustomData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirDropCustomData.m; sourceTree = "<group>"; };
 		94595E2219C5A0E30097CF2C /* readme 1.customdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "readme 1.customdata"; sourceTree = "<group>"; };
 		94595E2319C5A0E30097CF2C /* readme 2.customdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = "readme 2.customdata"; sourceTree = "<group>"; };
-		94BE656819C58B730024BF86 /* airdrop_custom_data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = airdrop_custom_data.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94BE656819C58B730024BF86 /* Airdrop Custom Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Airdrop Custom Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BE656C19C58B730024BF86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94BE656D19C58B730024BF86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94BE656F19C58B730024BF86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		94BE656919C58B730024BF86 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94BE656819C58B730024BF86 /* airdrop_custom_data.app */,
+				94BE656819C58B730024BF86 /* Airdrop Custom Data.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,7 +115,7 @@
 			);
 			name = airdrop_custom_data;
 			productName = airdrop_custom_data;
-			productReference = 94BE656819C58B730024BF86 /* airdrop_custom_data.app */;
+			productReference = 94BE656819C58B730024BF86 /* Airdrop Custom Data.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -284,7 +284,7 @@
 				INFOPLIST_FILE = airdrop_custom_data/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Airdrop Custom Data";
 			};
 			name = Debug;
 		};
@@ -295,7 +295,7 @@
 				INFOPLIST_FILE = airdrop_custom_data/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Airdrop Custom Data";
 			};
 			name = Release;
 		};
