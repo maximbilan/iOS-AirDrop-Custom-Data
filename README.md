@@ -3,7 +3,7 @@ iOS Airdrop Custom Data Sample
 
 In iOS 7, Apple introduced AirDrop, a way of sharing files and links between nearby devices using a combination of Bluetooth and Wi-Fi.<br>
 
-If you’re sharing images, or simple web links, you’ll get the simple behavior with UIActivityViewController, but if you want to share custom data into your native application you have to do a little more work. I'd like to tell exactly how to do this.<br>
+If you’re sharing images, or simple web links, you’ll get the simple behavior with <i>UIActivityViewController</i>, but if you want to share custom data into your native application you have to do a little more work. I'd like to tell exactly how to do this.<br>
 
 You need to register the document types that your application can open with iOS. To do this you need to add a document type to your app’s Info.plist for each document type that your app can open. Additionally if any of the document types are not known by iOS, you will need to provide an Uniform Type Identifier (UTI) for that document type.<br>
 
@@ -17,9 +17,9 @@ You need to register the document types that your application can open with iOS.
 6. Type the name of the document type. In the “Types” section fill in the UTI for the new type. Provide an icon for the document.
 7. Click the disclosure triangle to open Additional document type properties.
 8. Click in the table to add a new key and value.
-9. For the key value type: CFBundleTypeRole. For the value type: Editor.
+9. For the key value type: <i>CFBundleTypeRole</i>. For the value type: Editor.
 10. Click the + button to add another key/value pair.
-11. For the key value type: LSHandlerRank. For the value type: Owner.
+11. For the key value type: <i>LSHandlerRank</i>. For the value type: Owner.
 
 If the document type you are adding is a custom document type, or a document type that iOS does not already know about, you will need to define the UTI for the document type.
 
@@ -46,7 +46,7 @@ For example:<br>
 
 The source you can found here https://developer.apple.com/library/ios/qa/qa1587/_index.html.
 
-For our custom data format create UIActivityItemSource class:
+For our custom data format create <i>UIActivityItemSource</i> class:
 
 <pre>
 #import &#60;Foundation/Foundation.h&#62;
@@ -155,7 +155,7 @@ else {
 }
 </pre>
 
-Readme 1.customdata and readme 2.customdata - pre created files, which are located in bundle.
+<i>Readme 1.customdata</i> and <i>readme 2.customdata</i> - pre created files, which are located in bundle.
 Files should not be necessary in the bundle, it's just for sample, they may be created anywhere, depends on your implementation.
 
 And for obtaining and processing your custom data, you should use openURL method in application delegate. For example:
