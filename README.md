@@ -155,7 +155,7 @@ else {
 }
 </pre>
 
-<i>Readme 1.customdata</i> and <i>readme 2.customdata</i> - pre created files, which are located in bundle.
+<i>readme 1.customdata</i> and <i>readme 2.customdata</i> - pre created files, which are located in bundle.
 Files should not be necessary in the bundle, it's just for sample, they may be created anywhere, depends on your implementation.
 
 And for obtaining and processing your custom data, you should use openURL method in application delegate. For example:
