@@ -1,4 +1,4 @@
-iOS Airdrop Custom Data Sample
+iOS Airdrop Custom Data Transferring Example
 =======================
 
 In iOS 7, Apple introduced AirDrop, a way of sharing files and links between nearby devices using a combination of Bluetooth and Wi-Fi.<br>
